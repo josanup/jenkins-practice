@@ -10,7 +10,10 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 1,
   workers: 5,
-  reporter: 'html',
+  reporter: [
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'test-results/results.json' }],
+  ],
   use: {
     trace: 'retain-on-failure',
     screenshot: 'on-first-failure',
