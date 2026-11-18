@@ -20,7 +20,7 @@ permissions:
 jobs:
   playwright-tests:
     if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
-    runs-on: ubuntu-latest # virtual machine to run the tests on (macOS, Windows, or Linux)
+    runs-on: ubuntu-24.04 # virtual machine to run the tests on (macOS, Windows, or Linux)
     timeout-minutes: 60 # maximum timeout in minutes for the entire workflow to be completed in
 
     env:
